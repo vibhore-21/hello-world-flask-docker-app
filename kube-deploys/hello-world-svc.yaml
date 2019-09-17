@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-world-svc
+  namespace: hello-world
+spec:
+  type: NodePort
+  ports:
+  - protocol: TCP
+    targetPort: pythonport
+    port: 80
+  selector:
+    name: hello-world
+    version: v1

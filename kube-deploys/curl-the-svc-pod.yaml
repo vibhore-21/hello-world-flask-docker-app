@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  namespace: hello-world
+  name: curl-hello-svc
+spec:
+  restartPolicy: Never
+  containers:
+  - image: vibhorem/ubuntu-with-curl:v4
+    args: ["curl http://hello-world-svc.hello-world.svc.cluster.local:80/"]
+    name: curl-the-svc
+  nodeSelector:
+    name: demo-node

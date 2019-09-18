@@ -7,6 +7,7 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
+    name: hw-svc-port
     targetPort: pythonport
     port: 80
   selector:
